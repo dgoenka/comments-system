@@ -19,11 +19,12 @@
   flex-direction: column;
   border-radius: 0px;
   cursor: pointer;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 1px solid #f3e9e9;
 }
 
 .commentListHolder {
   padding: 17px 34px;
+  border-top: 1px solid #f3e9e9;
 }
 
 .commentListStyle {

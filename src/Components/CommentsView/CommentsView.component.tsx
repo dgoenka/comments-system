@@ -56,7 +56,7 @@ const CommentsView: React.FC<CommentViewProps> = ({
             <div className={styles.lineReplyAndFurther}>
               {isShowing && <div className={styles.drawLineReplyRow} />}
               <Typography
-                onClick={() => setIsShowing(true)}
+                onClick={() => null}
                 sx={{
                   color: "#3676D6",
                   fontSize: "0.875rem",
@@ -67,6 +67,20 @@ const CommentsView: React.FC<CommentViewProps> = ({
               >
                 {`Reply`}
               </Typography>
+              {isShowing && (
+                <Typography
+                  onClick={() => setIsShowing(false)}
+                  sx={{
+                    color: "#3676D6",
+                    fontSize: "0.875rem",
+                    fontWeight: "500",
+                    ...(isShowing ? { marginBottom: "20px" } : {}),
+                  }}
+                  variant={"body1"}
+                >
+                  {`Hide Replies`}
+                </Typography>
+              )}
             </div>
             {comments?.length > 0 ? (
               isShowing ? (

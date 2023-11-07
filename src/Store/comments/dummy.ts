@@ -16,7 +16,7 @@ const COMMENTS_DUMMY_DATA: PostsState = {
         {
           id: 870,
           author: {
-            displayName: "fkinghorno5@webeden.co.uk",
+            displayName: "qwdede@edcwc.co.uk",
             profilePicUrl: "http://dummyimage.com/169x222.png/ff4444/ffffff",
           },
           contents:
@@ -70,7 +70,7 @@ const COMMENTS_DUMMY_DATA: PostsState = {
             {
               id: 858,
               author: {
-                displayName: "fgrishukovnt@spiegel.de",
+                displayName: "nfkwjfn@spiegel.de",
                 profilePicUrl:
                   "http://dummyimage.com/216x194.png/dddddd/000000",
               },
