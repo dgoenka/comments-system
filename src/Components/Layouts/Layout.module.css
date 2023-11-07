@@ -1,11 +1,31 @@
 .main {
-    display:flex;
+  display: flex;
+  flex-direction: column;
 }
 
-.left {
-    flex: 0.2;
+.navbar {
+  flex: 0.2;
 }
 
-.right {
-    flex: 0.8;
+.navbarLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.navbarItem {
+  text-decoration: none;
+  color: black;
+  opacity: 80%;
+  :visited {
+    color: black;
+    opacity: 60%;
+  }
+}
+
+.body {
+  flex: 0.8;
 }

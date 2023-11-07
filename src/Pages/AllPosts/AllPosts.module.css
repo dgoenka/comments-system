@@ -1,0 +1,18 @@
+.pageRoot {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.commentsRoot {
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 34px;
+  box-sizing: border-box;
+}
+.linkStyle {
+  text-decoration: none;
+}

@@ -1,0 +1,69 @@
+.cardStyle {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px;
+}
+.commentAndReplies {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+}
+.commentCloud {
+  display: inline-flex;
+  padding: 0.625rem 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1875rem;
+  border-radius: 0rem 1rem 1rem 1rem;
+  background: #edf5f8;
+}
+.nameRow {
+  display: flex;
+  flex-direction: row;
+}
+.avatarHolder {
+  width: min-content;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.drawLine {
+  flex: 1;
+  width: 0;
+  border-left: 1px solid rgb(0, 0, 0, 0.15);
+}
+.drawLineHorizontal {
+  height: 0px;
+  margin-top: 20px;
+  min-width: 20px;
+  max-width: 20px;
+  border-top: 1px solid rgb(0, 0, 0, 0.15);
+}
+.drawLineReplyRow {
+  width: 0px;
+  min-height: 100%;
+  max-height: 100%;
+  margin-left: 20px;
+  border-left: 1px solid rgb(0, 0, 0, 0.15);
+}
+
+.nameDateColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.lineReplyAndFurther {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.replyAndFurther {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,35 @@
+.pageRoot {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.commentsRoot {
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 34px;
+  box-sizing: border-box;
+}
+.cardStyle {
+  padding: 17px 34px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px;
+  cursor: pointer;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.commentListHolder {
+  padding: 17px 34px;
+}
+
+.commentListStyle {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px;
+  gap: 0px;
+  cursor: pointer;
+}

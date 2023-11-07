@@ -1,5 +1,5 @@
 const routes = {
-    defaultAsFunction: "/function",
-    defaultAsClass: "/class",
-}
+  comments: { path: "/comments", title: "All Posts" },
+  post: { path: "/post/:postId", title: "A Post with AllPosts" },
+};
 export default routes;

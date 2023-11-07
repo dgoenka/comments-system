@@ -1,9 +1,8 @@
-import { configureStore,  } from '@reduxjs/toolkit';
-import tmpReducer from "../tmp/tmp.slice";
+import { configureStore } from "@reduxjs/toolkit";
+import CommentsReducer from "../comments/comments.slice";
 
 export const store = configureStore({
-    reducer: {
-        tmp: tmpReducer,
-    }
+  reducer: {
+    comments: CommentsReducer,
+  },
 });
-
