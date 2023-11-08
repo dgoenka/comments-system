@@ -36,7 +36,13 @@ const CommentsView: React.FC<CommentViewProps> = ({
     <Box className={styles.cardStyle}>
       <div className={styles.nameRow}>
         <div className={styles.avatarHolder}>
-          <Avatar src={imageUrl || user} className={styles.avatarStyles} />
+          <div className={styles.avatarStyles}>
+            <Avatar className={styles.avatarStyles} src={user} />
+            <Avatar
+              className={styles.avatarStylesOverlaid}
+              src={imageUrl || user}
+            />
+          </div>
           {index < total - 1 && <div className={styles.drawLine} />}
         </div>
         <div className={styles.drawLineHorizontal} />
@@ -112,6 +118,7 @@ const CommentsView: React.FC<CommentViewProps> = ({
           </div>
         </div>
       </div>
+      {level === 0 && index === 0 && <div className={styles.firstRootItem} />}
     </Box>
   );
 };

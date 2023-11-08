@@ -19,4 +19,18 @@
 }
 
 .avatarStyles {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  max-width: 40px;
+}
+.avatarStylesOverlaid {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

@@ -27,7 +27,13 @@ const PostView: React.FC<PostViewProps> = ({
   return (
     <NoBorderRadiusCard className={styles.cardStyle}>
       <div className={styles.nameRow}>
-        <Avatar className={styles.avatarStyles} src={imageUrl || user} />
+        <div className={styles.avatarStyles}>
+          <Avatar className={styles.avatarStyles} src={user} />
+          <Avatar
+            className={styles.avatarStylesOverlaid}
+            src={imageUrl || user}
+          />
+        </div>
         <div className={styles.nameDateColumn}>
           <Typography
             variant={"subtitle1"}

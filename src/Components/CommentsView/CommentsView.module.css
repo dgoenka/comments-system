@@ -2,6 +2,15 @@
   display: flex;
   flex-direction: column;
   border-radius: 0px;
+  position: relative;
+}
+.firstRootItem {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  height: 20px;
+  width: 0;
+  border-left: 1px solid rgb(0, 0, 0, 0.15);
 }
 .commentAndReplies {
   display: flex;
@@ -66,4 +75,20 @@
 .replyAndFurther {
   display: flex;
   flex-direction: column;
+}
+.avatarStyles {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  max-width: 40px;
+}
+.avatarStylesOverlaid {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
