@@ -14,11 +14,13 @@
 }
 .commentAndReplies {
   display: flex;
+  flex: 1;
   flex-direction: column;
   padding-bottom: 16px;
 }
 .commentCloud {
   display: inline-flex;
+  flex: 1;
   padding: 0.625rem 0.75rem;
   flex-direction: column;
   align-items: flex-start;
