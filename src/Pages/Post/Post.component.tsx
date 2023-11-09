@@ -34,6 +34,7 @@ const PostComponent = () => {
                   <div className={styles.commentListStyle}>
                     <CommentsView
                       key={comment.id}
+                      commentId={comment.id}
                       name={comment.author.displayName}
                       date={comment.date}
                       contents={comment.contents}

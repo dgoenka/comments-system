@@ -6,7 +6,10 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { Link } from "react-router-dom";
 import NoBorderRadiusCard from "../../Reusables/NoBorderRadiusCard";
-import { Comment } from "../../Store";
+import { Comment, useAppSelector } from "../../Store";
+import { getReplyingTo, setReplyingTo } from "../../Store/replying";
+import PostBox from "../PostBox/PostBox.component";
+import { useDispatch } from "react-redux";
 
 dayjs.extend(relativeTime);
 
@@ -19,6 +22,7 @@ type CommentViewProps = {
   level: number;
   index: number;
   total: number;
+  commentId: number | string;
 };
 
 const CommentsView: React.FC<CommentViewProps> = ({
@@ -29,9 +33,12 @@ const CommentsView: React.FC<CommentViewProps> = ({
   level,
   index,
   total,
+  commentId,
 }) => {
   const [isShowing, setIsShowing] = useState(false);
-
+  const commentIdReplyingTo = useAppSelector(getReplyingTo);
+  const dispatch = useDispatch();
+  const isReplyingToThisComment = commentIdReplyingTo === commentId;
   return (
     <Box className={styles.cardStyle}>
       <div className={styles.nameRow}>
@@ -61,38 +68,59 @@ const CommentsView: React.FC<CommentViewProps> = ({
           <div className={styles.replyAndFurther}>
             <div className={styles.lineReplyAndFurther}>
               {isShowing && <div className={styles.drawLineReplyRow} />}
-              <Typography
-                onClick={() => null}
-                sx={{
-                  color: "#3676D6",
-                  fontSize: "0.875rem",
-                  fontWeight: "500",
-                  ...(isShowing ? { marginBottom: "20px" } : {}),
-                }}
-                variant={"body1"}
+              <div
+                className={
+                  isReplyingToThisComment
+                    ? styles.lineReplyAndFurtherWhileReplying
+                    : styles.lineReplyAndFurther
+                }
               >
-                {`Reply`}
-              </Typography>
-              {isShowing && (
-                <Typography
-                  onClick={() => setIsShowing(false)}
-                  sx={{
-                    color: "#3676D6",
-                    fontSize: "0.875rem",
-                    fontWeight: "500",
-                    ...(isShowing ? { marginBottom: "20px" } : {}),
-                  }}
-                  variant={"body1"}
-                >
-                  {`Hide Replies`}
-                </Typography>
-              )}
+                {isReplyingToThisComment ? (
+                  <PostBox
+                    onSubmit={() => {
+                      dispatch(setReplyingTo(null));
+                    }}
+                    onCancel={() => dispatch(setReplyingTo(null))}
+                    showTitle={false}
+                  />
+                ) : (
+                  <Typography
+                    onClick={() => {
+                      dispatch(setReplyingTo(commentId));
+                    }}
+                    sx={{
+                      color: "#3676D6",
+                      fontSize: "0.875rem",
+                      fontWeight: "500",
+                      ...(isShowing ? { marginBottom: "20px" } : {}),
+                    }}
+                    variant={"body1"}
+                  >
+                    {`Reply`}
+                  </Typography>
+                )}
+                {isShowing && (
+                  <Typography
+                    onClick={() => setIsShowing(false)}
+                    sx={{
+                      color: "#3676D6",
+                      fontSize: "0.875rem",
+                      fontWeight: "500",
+                      ...(isShowing ? { marginBottom: "20px" } : {}),
+                    }}
+                    variant={"body1"}
+                  >
+                    {`Hide Replies`}
+                  </Typography>
+                )}
+              </div>
             </div>
             {comments?.length > 0 ? (
               isShowing ? (
                 comments.map((comment, index) => (
                   <CommentsView
                     key={comment.id}
+                    commentId={comment.id}
                     name={comment.author.displayName}
                     date={comment.date}
                     contents={comment.contents}

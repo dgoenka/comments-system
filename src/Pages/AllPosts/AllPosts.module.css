@@ -13,6 +13,10 @@
   padding: 34px;
   box-sizing: border-box;
 }
+
+.commentsRoot:first-child {
+  gap: 30px;
+}
 .linkStyle {
   text-decoration: none;
 }

@@ -1,0 +1,98 @@
+.postbox {
+  width: 100%;
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 1rem 1rem 1rem 1rem;
+  background: #edf5f8;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+.postboxButtonRow {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.postboxButton {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: solid #1f628d 2px;
+}
+.postboxButton:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.postboxCancelButton {
+  background: transparent;
+  font-family: Arial;
+  color: #b44a4a;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+}
+.postboxCancelButton:hover {
+  -webkit-text-stroke: 1px #b44a4a;
+}
+
+.postboxMessage {
+  width: 100%;
+  min-height: 100px;
+  max-height: 100px;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 20px;
+  resize: none;
+  box-sizing: border-box;
+  scrollbar-width: auto;
+  scrollbar-color: #444444 #ffffff;
+}
+.postboxMessage::-webkit-scrollbar {
+  width: 6px;
+}
+.postboxMessage::-webkit-scrollbar-track {
+  background: transparent;
+}
+.postboxMessage::-webkit-scrollbar-thumb {
+  background-color: #44444480;
+  border-radius: 10px;
+}
+
+.postboxMessage:focus,
+.postboxTitle:focus {
+  outline: none;
+}
+
+.postboxTitle {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 20px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
