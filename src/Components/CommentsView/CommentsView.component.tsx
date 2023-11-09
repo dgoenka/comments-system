@@ -66,8 +66,11 @@ const CommentsView: React.FC<CommentViewProps> = ({
             {contents && <Typography variant={"body2"}>{contents}</Typography>}
           </div>
           <div className={styles.replyAndFurther}>
-            <div className={styles.lineReplyAndFurther}>
-              {isShowing && <div className={styles.drawLineReplyRow} />}
+            <div
+              className={`${styles.lineReplyAndFurther} ${
+                isShowing ? styles.drawLineReplyRow : ""
+              }`}
+            >
               <div
                 className={
                   isReplyingToThisComment
@@ -92,7 +95,9 @@ const CommentsView: React.FC<CommentViewProps> = ({
                       color: "#3676D6",
                       fontSize: "0.875rem",
                       fontWeight: "500",
-                      ...(isShowing ? { marginBottom: "20px" } : {}),
+                      ...(isShowing
+                        ? { marginTop: "10px", marginBottom: "10px" }
+                        : {}),
                     }}
                     variant={"body1"}
                   >
@@ -106,7 +111,9 @@ const CommentsView: React.FC<CommentViewProps> = ({
                       color: "#3676D6",
                       fontSize: "0.875rem",
                       fontWeight: "500",
-                      ...(isShowing ? { marginBottom: "20px" } : {}),
+                      ...(isShowing
+                        ? { marginTop: "10px", marginBottom: "10px" }
+                        : {}),
                     }}
                     variant={"body1"}
                   >
